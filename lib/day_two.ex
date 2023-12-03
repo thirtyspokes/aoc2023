@@ -1,8 +1,6 @@
 defmodule Aoc2023.DayTwo do
   def parse_input(path) do
-    File.stream!(path)
-    |> Stream.map(&String.trim_trailing/1)
-    |> Enum.to_list()
+    Aoc2023.Utils.file_to_lines(path)
     |> Enum.map(&parse_game_info/1)
   end
 
